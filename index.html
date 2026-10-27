@@ -1,180 +1,395 @@
 
-<section class="section" id="projects">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080b12">
+<meta name="description" content="Sathvik Raj T G | AI/ML Engineering Student and Python Developer">
+<title>Sathvik Raj T G | Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+:root {
+  --bg:#080b12;--panel:#101722;--text:#f1f5f9;
+  --muted:#a1adbd;--accent:#76f7c4;--blue:#8ab4ff;
+  --border:rgba(255,255,255,.09);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{background:radial-gradient(ellipse at 75% 0%,#17243a,transparent 42%),var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;line-height:1.7}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,90%);margin:auto}
+h1,h2,h3,.logo{font-family:"Space Grotesk",sans-serif;line-height:1.25}
+.accent{color:var(--accent)}
+.gradient{background:linear-gradient(110deg,var(--accent),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
+.navbar{position:sticky;top:0;z-index:10;background:rgba(8,11,18,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-size:1.4rem;font-weight:700}.logo span{color:var(--accent)}
+.nav-links{display:flex;list-style:none;gap:22px}
+.nav-links a{font-size:.9rem;color:var(--muted)}
+.nav-links a:hover{color:var(--accent)}
+.menu-btn{display:none;background:transparent;color:white;border:1px solid var(--border);padding:8px 12px;border-radius:8px}
+.hero{padding:95px 0 75px}
+.hero-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:55px;align-items:center}
+.pill{display:inline-flex;gap:9px;align-items:center;border:1px solid var(--border);border-radius:30px;padding:6px 13px;margin-bottom:24px;font-size:.83rem}
+.dot{width:8px;height:8px;background:var(--accent);border-radius:50%}
+.hero h1{font-size:clamp(2.7rem,6vw,5rem);letter-spacing:-2px;margin-bottom:18px}
+.hero h2{font-size:clamp(1.1rem,2.4vw,1.5rem);font-weight:500;color:#cbd5e1;margin-bottom:18px}
+p{color:var(--muted)}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:11px 17px;border:1px solid var(--border);border-radius:9px;font-weight:700;font-size:.9rem;transition:.2s}
+.btn:hover{transform:translateY(-3px)}
+.btn-primary{background:var(--accent);color:#07130e;border-color:var(--accent)}
+.btn-secondary{background:rgba(255,255,255,.025)}
+.btn-secondary:hover{border-color:var(--accent)}
+.socials{display:flex;gap:20px;margin-top:25px}
+.socials a{color:var(--muted);font-size:1.3rem}
+.socials a:hover{color:var(--accent)}
+.portrait{width:min(300px,100%);aspect-ratio:4/5;margin:auto;border:1px solid #397c69;border-radius:25px;padding:9px;background:linear-gradient(140deg,#203b3a,#152137);transform:rotate(2deg)}
+.portrait-inner{height:100%;border-radius:18px;background:var(--panel);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;text-align:center;padding:20px;transform:rotate(-2deg)}
+.portrait-inner i{font-size:4rem;color:var(--accent)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:50px}
+.stat,.card{background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:16px}
+.stat{padding:20px}.stat strong{display:block;font:700 1.3rem "Space Grotesk",sans-serif}.stat span{color:var(--muted);font-size:.85rem}
+section{padding:78px 0}
+.section-head{margin-bottom:32px}
+.eyebrow{font-size:.78rem;color:var(--accent);letter-spacing:2px;text-transform:uppercase;font-weight:700}
+.section-head h2{font-size:clamp(2rem,4vw,3rem);margin:10px 0;letter-spacing:-1px}
+.section-head p{max-width:700px}
+.card{padding:25px;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-4px);border-color:rgba(118,247,196,.4)}
+.card h3{font-size:1.18rem;margin-bottom:12px}
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
+.info{list-style:none;display:grid;gap:13px}
+.info li{display:flex;gap:12px;color:var(--muted)}
+.info i{color:var(--accent);width:18px;margin-top:5px}
+.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.skill{text-align:center;padding:23px 12px}
+.skill i{font-size:1.8rem;color:var(--accent);margin-bottom:12px}
+.skill h3{font-size:1rem;margin-bottom:6px}
+.skill p{font-size:.84rem}
+.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.project{display:flex;flex-direction:column;min-height:285px}
+.project-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:17px}
+.project-icon{width:46px;height:46px;display:grid;place-items:center;border-radius:12px;color:var(--accent);background:rgba(118,247,196,.09);font-size:1.25rem}
+.project h3{font-size:1.22rem;margin-bottom:10px}
+.project p{font-size:.93rem;flex-grow:1}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin:16px 0}
+.tag{font-size:.75rem;color:#c5d0df;border:1px solid var(--border);border-radius:6px;padding:4px 9px}
+.project-actions{display:flex;gap:15px;flex-wrap:wrap;margin-top:9px}
+.project-actions a{color:var(--accent);font-size:.9rem;font-weight:600}
+.project-actions a:hover{text-decoration:underline}
+.timeline{display:grid;gap:22px}
+.timeline-item{padding-left:24px;border-left:1px solid #30404b;position:relative}
+.timeline-item:before{content:"";position:absolute;left:-5px;top:6px;width:9px;height:9px;background:var(--accent);border-radius:50%}
+.timeline-item h3{margin-bottom:6px}
+.timeline-item .meta{color:var(--accent);font-size:.86rem;margin-bottom:6px}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:20px}
+.contact-links{display:grid;gap:12px;margin-top:18px}
+.contact-link{display:flex;gap:12px;align-items:center;padding:12px;border:1px solid var(--border);border-radius:10px;overflow-wrap:anywhere}
+.contact-link i{color:var(--accent);width:20px}
+.contact-link small{display:block;color:var(--muted)}
+.contact-form{display:grid;gap:13px}
+.contact-form label{font-size:.9rem}
+.contact-form input,.contact-form textarea{display:block;width:100%;margin-top:6px;padding:12px;border:1px solid var(--border);border-radius:8px;background:#090e16;color:white;outline:none}
+.contact-form input:focus,.contact-form textarea:focus{border-color:var(--accent)}
+.contact-form textarea{min-height:110px;resize:vertical}
+footer{border-top:1px solid var(--border);padding:24px 0;color:var(--muted);font-size:.85rem}
+.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+footer a{color:var(--accent)}
+.reveal{opacity:0;transform:translateY(15px);transition:opacity .5s,transform .5s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:850px){.hero-grid{grid-template-columns:1fr .65fr;gap:25px}.nav-links{gap:12px}.nav-links a{font-size:.82rem}.skills-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){
+ section{padding:60px 0}.hero{padding:55px 0}.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+ .portrait{width:180px;aspect-ratio:1;margin:0 0 25px}.hero h1{letter-spacing:-1px}
+ .stats{gap:8px;margin-top:32px}.stat{padding:12px}.stat strong{font-size:1rem}.stat span{font-size:.73rem}
+ .project-grid{grid-template-columns:1fr}.menu-btn{display:block}
+ .nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#0b1019;border-bottom:1px solid var(--border);padding:20px 5%;flex-direction:column}
+ .nav-links.open{display:flex}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+
+<body>
+<header class="navbar">
+  <div class="container nav">
+    <a class="logo" href="#home">Sathvik<span>.</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
   <div class="container">
-    <div class="section-heading reveal">
-      <span class="eyebrow">MY WORK</span>
-      <h2>Featured <span class="accent">Projects</span></h2>
-      <p>Explore my projects in artificial intelligence, Python development, automation, and software engineering.</p>
-    </div>
-
-    <div class="project-grid">
-
-      <!-- Campus Handbook Assistant -->
-      <article class="card project-card reveal">
-        <div class="project-top">
-          <div class="project-icon"><i class="fa-solid fa-book-open"></i></div>
-          <div class="project-links">
-            <a href="https://github.com/sathvik-raj24/campus-handbook-assistant"
-               target="_blank" rel="noopener" aria-label="View source code">
-              <i class="fa-brands fa-github"></i>
-            </a>
-          </div>
-        </div>
-        <h3>Campus Handbook Assistant — RAG</h3>
-        <p>A local Retrieval-Augmented Generation application that retrieves relevant handbook information to answer questions using a knowledge base, with optional Ollama-powered embeddings and language-model generation.</p>
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">RAG</span>
-          <span class="tag">Ollama</span>
-          <span class="tag">AI</span>
-        </div>
-        <div style="margin-top:22px">
-          <a class="btn btn-primary" href="https://github.com/sathvik-raj24/campus-handbook-assistant" target="_blank" rel="noopener">
-            View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </a>
-        </div>
-      </article>
-
-      <!-- AI Resume Analyzer -->
-      <article class="card project-card reveal">
-        <div class="project-top">
-          <div class="project-icon"><i class="fa-solid fa-file-circle-check"></i></div>
-          <div class="project-links">
-            <a href="https://github.com/sathvik-raj24/AI-Resume-Analyzer"
-               target="_blank" rel="noopener" aria-label="View source code">
-              <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="https://airesume-intelligence.streamlit.app"
-               target="_blank" rel="noopener" aria-label="Open live demo">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </a>
-          </div>
-        </div>
-        <h3>AI Resume Analyzer</h3>
-        <p>An AI-focused resume analysis project designed to help users review resume content and explore alignment with career opportunities.</p>
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">AI</span>
-          <span class="tag">Resume Analysis</span>
-          <span class="tag">Streamlit</span>
-        </div>
+    <div class="hero-grid">
+      <div>
+        <div class="pill"><span class="dot"></span> AI/ML Engineering Student</div>
+        <h1>Hi, I'm <span class="gradient">Sathvik Raj T G.</span></h1>
+        <h2>Python Developer · AI/ML Enthusiast · <span class="accent">Problem Solver</span></h2>
+        <p>I'm a B.E. Artificial Intelligence and Machine Learning student at Vivekananda College of Engineering and Technology, Puttur. I enjoy building practical projects, exploring AI systems, and developing my software engineering skills.</p>
         <div class="actions">
-          <a class="btn btn-primary" href="https://airesume-intelligence.streamlit.app" target="_blank" rel="noopener">
-            Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </a>
-          <a class="btn btn-secondary" href="https://github.com/sathvik-raj24/AI-Resume-Analyzer" target="_blank" rel="noopener">
-            Source Code
-          </a>
+          <a class="btn btn-primary" href="#projects">Explore Projects <i class="fa-solid fa-arrow-right"></i></a>
+          <a class="btn btn-secondary" href="#contact">Contact Me</a>
         </div>
-      </article>
-
-      <!-- Codebase Archaeologist -->
-      <article class="card project-card reveal">
-        <div class="project-top">
-          <div class="project-icon"><i class="fa-solid fa-code-branch"></i></div>
-          <div class="project-links">
-            <a href="https://github.com/sathvik-raj24/codebase-archaeologist"
-               target="_blank" rel="noopener" aria-label="View source code">
-              <i class="fa-brands fa-github"></i>
-            </a>
-          </div>
+        <div class="socials">
+          <a href="https://github.com/sathvik-raj24" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/sathvik-raj-t-g-23451132a/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="mailto:satvikkakkapady@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
         </div>
-        <h3>Codebase Archaeologist</h3>
-        <p>A software development project focused on exploring and understanding codebases. Visit the repository for its implementation, documentation, and features.</p>
-        <div class="tags">
-          <span class="tag">Software Engineering</span>
-          <span class="tag">Code Analysis</span>
-          <span class="tag">Development</span>
+      </div>
+      <div class="portrait">
+        <div class="portrait-inner">
+          <i class="fa-solid fa-user-astronaut"></i>
+          <strong>Sathvik Raj T G</strong>
+          <span>AI/ML Engineering Student</span>
+          <span>Add a profile photo here anytime.</span>
         </div>
-        <div style="margin-top:22px">
-          <a class="btn btn-primary" href="https://github.com/sathvik-raj24/codebase-archaeologist" target="_blank" rel="noopener">
-            View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </a>
-        </div>
-      </article>
-
-      <!-- CodeAlpha Hangman -->
-      <article class="card project-card reveal">
-        <div class="project-top">
-          <div class="project-icon"><i class="fa-solid fa-gamepad"></i></div>
-          <div class="project-links">
-            <a href="https://github.com/sathvik-raj24/CodeAlpha_Hangman"
-               target="_blank" rel="noopener" aria-label="View source code">
-              <i class="fa-brands fa-github"></i>
-            </a>
-          </div>
-        </div>
-        <h3>Hangman Game</h3>
-        <p>A Python word-guessing game completed as part of CodeAlpha programming internship tasks, demonstrating programming fundamentals and game logic.</p>
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">Game Logic</span>
-          <span class="tag">CodeAlpha</span>
-        </div>
-        <div style="margin-top:22px">
-          <a class="btn btn-primary" href="https://github.com/sathvik-raj24/CodeAlpha_Hangman" target="_blank" rel="noopener">
-            View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </a>
-        </div>
-      </article>
-
-      <!-- Stock Portfolio Tracker -->
-      <article class="card project-card reveal">
-        <div class="project-top">
-          <div class="project-icon"><i class="fa-solid fa-chart-line"></i></div>
-          <div class="project-links">
-            <a href="https://github.com/sathvik-raj24/CodeAlpha_StockPortfolio"
-               target="_blank" rel="noopener" aria-label="View source code">
-              <i class="fa-brands fa-github"></i>
-            </a>
-          </div>
-        </div>
-        <h3>Stock Portfolio Tracker</h3>
-        <p>A Python project for working with stock portfolio information and investment-related calculations, developed as part of CodeAlpha programming tasks.</p>
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">Data Handling</span>
-          <span class="tag">CodeAlpha</span>
-        </div>
-        <div style="margin-top:22px">
-          <a class="btn btn-primary" href="https://github.com/sathvik-raj24/CodeAlpha_StockPortfolio" target="_blank" rel="noopener">
-            View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </a>
-        </div>
-      </article>
-
-      <!-- File Organizer -->
-      <article class="card project-card reveal">
-        <div class="project-top">
-          <div class="project-icon"><i class="fa-solid fa-folder-tree"></i></div>
-          <div class="project-links">
-            <a href="https://github.com/sathvik-raj24/CodeAlpha_FileOrganizer"
-               target="_blank" rel="noopener" aria-label="View source code">
-              <i class="fa-brands fa-github"></i>
-            </a>
-          </div>
-        </div>
-        <h3>File Organizer</h3>
-        <p>A Python automation project designed to help organise files and simplify folder management, developed as part of CodeAlpha programming tasks.</p>
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">Automation</span>
-          <span class="tag">CodeAlpha</span>
-        </div>
-        <div style="margin-top:22px">
-          <a class="btn btn-primary" href="https://github.com/sathvik-raj24/CodeAlpha_FileOrganizer" target="_blank" rel="noopener">
-            View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </a>
-        </div>
-      </article>
-
+      </div>
     </div>
-
-    <div style="margin-top:30px">
-      <a class="btn btn-secondary" href="https://github.com/sathvik-raj24" target="_blank" rel="noopener">
-        Explore All My GitHub Projects
-        <i class="fa-brands fa-github"></i>
-      </a>
+    <div class="stats">
+      <div class="stat"><strong class="accent">AI/ML</strong><span>Field of study</span></div>
+      <div class="stat"><strong class="accent">Python</strong><span>Core language</span></div>
+      <div class="stat"><strong class="accent">GitHub</strong><span>Projects &amp; code</span></div>
     </div>
   </div>
 </section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-head reveal"><span class="eyebrow">Introduction</span><h2>About <span class="accent">Me</span></h2><p>Learning by building projects and continuously improving my technical skills.</p></div>
+    <div class="about-grid">
+      <article class="card reveal">
+        <h3>My Journey</h3>
+        <p>I'm pursuing a Bachelor of Engineering in Artificial Intelligence and Machine Learning. My interests include Python development, AI-powered applications, retrieval-augmented generation, problem-solving, and software engineering.</p><br>
+        <p>I'm working to improve my programming fundamentals, practise DSA, and build useful projects as I prepare for internships and placements.</p>
+      </article>
+      <article class="card reveal">
+        <h3>Quick Information</h3>
+        <ul class="info">
+          <li><i class="fa-solid fa-graduation-cap"></i><span>B.E. Artificial Intelligence and Machine Learning</span></li>
+          <li><i class="fa-solid fa-building-columns"></i><span>Vivekananda College of Engineering and Technology, Puttur</span></li>
+          <li><i class="fa-solid fa-location-dot"></i><span>Karnataka, India</span></li>
+          <li><i class="fa-solid fa-code"></i><span>Python, AI/ML and software projects</span></li>
+          <li><i class="fa-solid fa-bullseye"></i><span>Career focus: Software Engineering and AI/ML</span></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <div class="section-head reveal"><span class="eyebrow">Technical Toolkit</span><h2>Skills &amp; <span class="accent">Technologies</span></h2><p>Technologies and subjects I explore through coursework and projects.</p></div>
+    <div class="skills-grid">
+      <article class="card skill reveal"><i class="fa-brands fa-python"></i><h3>Python</h3><p>Programming and scripting</p></article>
+      <article class="card skill reveal"><i class="fa-solid fa-brain"></i><h3>AI &amp; ML</h3><p>AI concepts and applications</p></article>
+      <article class="card skill reveal"><i class="fa-solid fa-book-open"></i><h3>RAG Systems</h3><p>Knowledge retrieval</p></article>
+      <article class="card skill reveal"><i class="fa-brands fa-git-alt"></i><h3>Git &amp; GitHub</h3><p>Version control</p></article>
+      <article class="card skill reveal"><i class="fa-brands fa-html5"></i><h3>HTML &amp; CSS</h3><p>Web development</p></article>
+      <article class="card skill reveal"><i class="fa-solid fa-database"></i><h3>DBMS &amp; SQL</h3><p>Database fundamentals</p></article>
+      <article class="card skill reveal"><i class="fa-solid fa-cloud"></i><h3>Cloud Computing</h3><p>Cloud fundamentals</p></article>
+      <article class="card skill reveal"><i class="fa-solid fa-gears"></i><h3>Automation</h3><p>Python utilities</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-head reveal"><span class="eyebrow">My Work</span><h2>Featured <span class="accent">Projects</span></h2><p>Explore my projects in AI, Python programming, automation, and software development.</p></div>
+    <div class="project-grid">
+
+      <article class="card project reveal">
+        <div class="project-top"><div class="project-icon"><i class="fa-solid fa-book-open"></i></div><i class="fa-solid fa-code-branch accent"></i></div>
+        <h3>Campus Handbook Assistant — RAG</h3>
+        <p>A local Retrieval-Augmented Generation application that retrieves relevant handbook information to answer questions using a knowledge base, with optional Ollama embeddings and language-model generation.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">RAG</span><span class="tag">Ollama</span><span class="tag">AI</span></div>
+        <div class="project-actions"><a href="https://github.com/sathvik-raj24/campus-handbook-assistant" target="_blank" rel="noopener">View Repository ↗</a></div>
+      </article>
+
+      <article class="card project reveal">
+        <div class="project-top"><div class="project-icon"><i class="fa-solid fa-file-circle-check"></i></div></div>
+        <h3>AI Resume Analyzer</h3>
+        <p>An AI-focused resume analysis project. Explore the source code or open the deployed application.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">AI</span><span class="tag">Streamlit</span></div>
+        <div class="project-actions">
+          <a href="https://github.com/sathvik-raj24/AI-Resume-Analyzer" target="_blank" rel="noopener">Source Code ↗</a>
+          <a href="https://airesume-intelligence.streamlit.app" target="_blank" rel="noopener">Live Demo ↗</a>
+        </div>
+      </article>
+
+      <article class="card project reveal">
+        <div class="project-top"><div class="project-icon"><i class="fa-solid fa-code-branch"></i></div></div>
+        <h3>Codebase Archaeologist</h3>
+        <p>A software development project for exploring and understanding codebases. Visit the repository for implementation details.</p>
+        <div class="tags"><span class="tag">Software Engineering</span><span class="tag">Code Analysis</span></div>
+        <div class="project-actions"><a href="https://github.com/sathvik-raj24/codebase-archaeologist" target="_blank" rel="noopener">View Repository ↗</a></div>
+      </article>
+
+      <article class="card project reveal">
+        <div class="project-top"><div class="project-icon"><i class="fa-solid fa-gamepad"></i></div></div>
+        <h3>CodeAlpha — Hangman Game</h3>
+        <p>A Python word-guessing game developed as part of programming internship tasks.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Game Logic</span></div>
+        <div class="project-actions"><a href="https://github.com/sathvik-raj24/CodeAlpha_Hangman" target="_blank" rel="noopener">View Repository ↗</a></div>
+      </article>
+
+      <article class="card project reveal">
+        <div class="project-top"><div class="project-icon"><i class="fa-solid fa-chart-line"></i></div></div>
+        <h3>Stock Portfolio Tracker</h3>
+        <p>A Python project for working with stock portfolio information and investment-related calculations.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Data Handling</span></div>
+        <div class="project-actions"><a href="https://github.com/sathvik-raj24/CodeAlpha_StockPortfolio" target="_blank" rel="noopener">View Repository ↗</a></div>
+      </article>
+
+      <article class="card project reveal">
+        <div class="project-top"><div class="project-icon"><i class="fa-solid fa-folder-tree"></i></div></div>
+        <h3>Python File Organizer</h3>
+        <p>A Python automation project designed to organise files and simplify folder management.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Automation</span></div>
+        <div class="project-actions"><a href="https://github.com/sathvik-raj24/CodeAlpha_FileOrganizer" target="_blank" rel="noopener">View Repository ↗</a></div>
+      </article>
+
+      <article class="card project reveal">
+        <div class="project-top"><div class="project-icon"><i class="fa-solid fa-recycle"></i></div></div>
+        <h3>EcoSort — AI-Powered Smart Bin</h3>
+        <p>An academic project concept for automated waste segregation using AI, sensors, a microcontroller, and a sorting mechanism.</p>
+        <div class="tags"><span class="tag">AI/ML</span><span class="tag">IoT</span><span class="tag">Embedded Systems</span></div>
+        <div class="project-actions"><a href="https://github.com/sathvik-raj24?tab=repositories" target="_blank" rel="noopener">Explore Repositories ↗</a></div>
+      </article>
+
+    </div>
+    <div class="actions"><a class="btn btn-primary" href="https://github.com/sathvik-raj24?tab=repositories" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> View All GitHub Projects</a></div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <div class="section-head reveal"><span class="eyebrow">Professional Development</span><h2>Experience &amp; <span class="accent">Learning</span></h2></div>
+    <article class="card reveal">
+      <div class="timeline">
+        <div class="timeline-item"><h3>CodeAlpha — Python Programming Tasks</h3><div class="meta">Python Development</div><p>Worked on Python programming tasks and practised code submissions, documentation, Git, and GitHub workflows.</p></div>
+        <div class="timeline-item"><h3>IBM Digital Learning</h3><div class="meta">Technical Learning</div><p>Add the exact completed IBM course or badge title and its verification link.</p></div>
+        <div class="timeline-item"><h3>Independent Project Development</h3><div class="meta">Python · AI/ML · Software</div><p>Building practical projects to strengthen programming, problem-solving, and application development skills.</p></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="education">
+  <div class="container">
+    <div class="section-head reveal"><span class="eyebrow">Academic Background</span><h2><span class="accent">Education</span></h2></div>
+    <article class="card reveal">
+      <h3>Bachelor of Engineering — Artificial Intelligence and Machine Learning</h3>
+      <p>Vivekananda College of Engineering and Technology, Puttur, Karnataka</p>
+      <p style="margin-top:8px">5th semester</p>
+    </article>
+  </div>
+</section>
+
+<section id="certificates">
+  <div class="container">
+    <div class="section-head reveal"><span class="eyebrow">Credentials</span><h2>Certificates &amp; <span class="accent">Learning</span></h2><p>Only completed, verifiable credentials should be listed here.</p></div>
+    <div class="about-grid">
+      <article class="card reveal"><h3><i class="fa-solid fa-award accent"></i> IBM Digital Learning</h3><p>Add your exact badge or certificate title and verification link.</p></article>
+      <article class="card reveal"><h3><i class="fa-solid fa-certificate accent"></i> Additional Certificates</h3><p>Add completed courses and internship completion credentials.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-head reveal"><span class="eyebrow">Let's Connect</span><h2>Contact <span class="accent">Me</span></h2><p>For project discussions, internship opportunities, and professional connections.</p></div>
+    <div class="contact-grid">
+      <article class="card reveal">
+        <h3>Contact Information</h3>
+        <div class="contact-links">
+          <a class="contact-link" href="mailto:satvikkakkapady@gmail.com"><i class="fa-regular fa-envelope"></i><span><small>Email</small>satvikkakkapady@gmail.com</span></a>
+          <a class="contact-link" href="https://github.com/sathvik-raj24" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i><span><small>GitHub</small>sathvik-raj24</span></a>
+          <a class="contact-link" href="https://www.linkedin.com/in/sathvik-raj-t-g-23451132a/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i><span><small>LinkedIn</small>Professional Profile</span></a>
+        </div>
+      </article>
+      <article class="card reveal">
+        <h3>Send a Message</h3>
+        <form class="contact-form" id="contactForm">
+          <label>Your Name<input id="senderName" required placeholder="Enter your name"></label>
+          <label>Your Email<input id="senderEmail" type="email" required placeholder="you@example.com"></label>
+          <label>Message<textarea id="senderMessage" required placeholder="Write your message"></textarea></label>
+          <button class="btn btn-primary" type="submit">Open Email Draft <i class="fa-regular fa-paper-plane"></i></button>
+          <p style="font-size:.8rem">This form opens your email application; it does not send messages directly from the website.</p>
+        </form>
+      </article>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> Sathvik Raj T G. All rights reserved.</span>
+    <a href="#home">Back to top ↑</a>
+  </div>
+</footer>
+
+<script>
+const menuBtn=document.getElementById("menuBtn");
+const navLinks=document.getElementById("navLinks");
+
+menuBtn.addEventListener("click",()=>{
+  const open=navLinks.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded",String(open));
+  menuBtn.innerHTML=open?'<i class="fa-solid fa-xmark"></i>':'<i class="fa-solid fa-bars"></i>';
+});
+
+navLinks.querySelectorAll("a").forEach(link=>{
+  link.addEventListener("click",()=>{
+    navLinks.classList.remove("open");
+    menuBtn.setAttribute("aria-expanded","false");
+    menuBtn.innerHTML='<i class="fa-solid fa-bars"></i>';
+  });
+});
+
+document.getElementById("year").textContent=new Date().getFullYear();
+
+if("IntersectionObserver" in window){
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  },{threshold:.12});
+  document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+}else{
+  document.querySelectorAll(".reveal").forEach(el=>el.classList.add("visible"));
+}
+
+document.getElementById("contactForm").addEventListener("submit",event=>{
+  event.preventDefault();
+  const name=document.getElementById("senderName").value.trim();
+  const email=document.getElementById("senderEmail").value.trim();
+  const message=document.getElementById("senderMessage").value.trim();
+  const subject=encodeURIComponent("Portfolio enquiry from "+name);
+  const body=encodeURIComponent("Name: "+name+"\nEmail: "+email+"\n\nMessage:\n"+message);
+  window.location.href="mailto:satvikkakkapady@gmail.com?subject="+subject+"&body="+body;
+});
+</script>
+</body>
+</html>
