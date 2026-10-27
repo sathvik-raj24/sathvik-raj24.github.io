@@ -4,85 +4,63 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Sathvik Raj T G - AIML engineering student and Python developer portfolio">
+<meta name="theme-color" content="#090b12">
+<meta name="description" content="Sathvik Raj T G — AI and Machine Learning engineering student and Python developer.">
 <title>Sathvik Raj T G | Portfolio</title>
 <style>
-:root {
-  --bg: #0a0c12;
-  --panel: #121722;
-  --text: #f2f4fb;
-  --muted: #a7b0c2;
-  --accent: #91a8ff;
-  --border: #272f40;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: Arial, sans-serif;
-  line-height: 1.7;
-}
-a { color: var(--accent); text-decoration: none; }
-a:hover { color: white; }
-nav {
-  display: flex; justify-content: space-between; align-items: center;
-  gap: 16px; padding: 20px 8%;
-  border-bottom: 1px solid var(--border);
-  position: sticky; top: 0; background: #0a0c12f5; z-index: 10;
-}
-nav strong { font-size: 18px; }
-nav div { display: flex; gap: 18px; flex-wrap: wrap; }
-nav a { font-size: 14px; }
-header { padding: 100px 8% 85px; }
-.eyebrow { color: var(--accent); letter-spacing: 2px; font-size: 12px; }
-h1 { font-size: clamp(38px, 7vw, 68px); line-height: 1.12; margin: 18px 0; }
-h2 { font-size: 30px; margin-bottom: 12px; }
-h3 { font-size: 19px; margin-bottom: 8px; }
-p { color: var(--muted); }
-.intro { max-width: 680px; font-size: 17px; }
-.actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 25px; }
-.btn {
-  display: inline-block; border: 1px solid var(--accent);
-  padding: 10px 17px; border-radius: 8px;
-}
-.btn.primary { background: var(--accent); color: #0a0c12; font-weight: bold; }
-section { padding: 65px 8%; border-top: 1px solid var(--border); }
-.section-intro { margin-bottom: 25px; }
-.grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 18px; margin-top: 25px;
-}
-.card {
-  background: var(--panel); border: 1px solid var(--border);
-  border-radius: 13px; padding: 23px;
-}
-.card p { margin: 10px 0 16px; }
-.tag {
-  display: inline-block; font-size: 12px; color: var(--accent);
-  background: #202943; border-radius: 5px; padding: 3px 8px;
-  margin-bottom: 12px;
-}
-.skills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
-.skills span {
-  background: var(--panel); border: 1px solid var(--border);
-  border-radius: 7px; padding: 8px 13px; color: #d9deeb;
-}
-footer {
-  padding: 30px 8%; border-top: 1px solid var(--border);
-  text-align: center; font-size: 13px;
-}
-@media(max-width:600px) {
-  nav { align-items: flex-start; flex-direction: column; padding: 16px 5%; }
-  nav div { gap: 12px; }
-  header { padding: 70px 6%; }
-  section { padding: 48px 6%; }
-  h2 { font-size: 26px; }
-}
+:root{--bg:#090b12;--panel:#121727;--text:#f4f5ff;--muted:#a9b1c6;--blue:#91a8ff;--purple:#c3a0ff;--line:#293047}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:radial-gradient(ellipse at 10% 0%,#25214b 0,transparent 36rem),var(--bg);color:var(--text);font:16px/1.7 Arial,sans-serif}
+a{color:var(--blue);text-decoration:none}
+a:hover{color:white}
+.wrap{width:min(1080px,90%);margin:auto}
+nav{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;padding:17px 5%;background:#090b12ed;border-bottom:1px solid var(--line)}
+nav strong{font-size:18px}
+nav div{display:flex;gap:18px;flex-wrap:wrap}
+nav a{font-size:13px}
+header{padding:85px 0}
+.hero{display:grid;grid-template-columns:1.5fr .7fr;gap:40px;align-items:center}
+.eyebrow{color:var(--blue);font-size:12px;font-weight:bold;letter-spacing:2px}
+h1{font-size:clamp(40px,6vw,68px);line-height:1.1;letter-spacing:-2px;margin:18px 0}
+.gradient{background:linear-gradient(100deg,var(--blue),var(--purple));color:transparent;background-clip:text}
+p{color:var(--muted)}
+.intro{font-size:17px;max-width:660px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn{display:inline-block;padding:11px 16px;border:1px solid var(--blue);border-radius:9px;font-weight:bold;font-size:13px}
+.primary{background:linear-gradient(110deg,var(--blue),var(--purple));color:#090b12;border:0}
+.profile{padding:24px;background:linear-gradient(145deg,#1b2136,#111522);border:1px solid var(--line);border-radius:22px}
+.avatar{width:120px;height:120px;border-radius:22px;object-fit:cover;display:block;margin-bottom:20px;background:#252b40}
+.profile h2{margin:0;font-size:22px}
+.profile p{font-size:13px}
+.pill{display:inline-block;border:1px solid var(--line);border-radius:20px;padding:5px 10px;margin:5px 5px 0 0;font-size:12px;color:#d8def5}
+section{padding:65px 0;border-top:1px solid var(--line)}
+.kicker{color:var(--purple);font-size:11px;font-weight:bold;letter-spacing:2px;text-transform:uppercase}
+h2.title{font-size:clamp(28px,4vw,40px);margin:7px 0 20px;line-height:1.2}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:25px}
+.card{background:linear-gradient(145deg,#151b2c,#10131e);border:1px solid var(--line);border-radius:16px;padding:23px;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-4px);border-color:#667bd0}
+.card h3{margin:8px 0}
+.card p{font-size:14px}
+.tag{font-size:11px;color:var(--purple);text-transform:uppercase;letter-spacing:1px}
+.links{display:flex;gap:18px;flex-wrap:wrap;margin-top:17px;font-size:13px;font-weight:bold}
+.skills{display:flex;flex-wrap:wrap;gap:10px}
+.skills span{padding:8px 13px;background:var(--panel);border:1px solid var(--line);border-radius:8px;font-size:13px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.contact-item{display:block;padding:13px 15px;border:1px solid var(--line);border-radius:10px;margin:10px 0;overflow-wrap:anywhere}
+label{display:block;font-size:13px;margin:12px 0 5px}
+input,textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:9px;background:#090d17;color:white;font:inherit}
+textarea{min-height:110px;resize:vertical}
+button{cursor:pointer;font:inherit}
+small,.note{font-size:12px;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:25px 0;text-align:center;color:var(--muted);font-size:12px}
+.reveal{animation:fade .7s ease both}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:720px){.hero,.contact-grid{grid-template-columns:1fr}.grid{grid-template-columns:1fr}header{padding:55px 0}nav{align-items:flex-start;flex-direction:column}nav div{gap:12px}.profile{max-width:420px}section{padding:48px 0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{animation:none}.card{transition:none}}
 </style>
 </head>
 <body>
-
 <nav>
   <strong>Sathvik Raj T G</strong>
   <div>
@@ -90,128 +68,140 @@ footer {
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#experience">Experience</a>
+    <a href="#certificates">Certificates</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
 
-<header>
-  <p class="eyebrow">ENGINEERING STUDENT · PYTHON DEVELOPER</p>
-  <h1>Learning. Building.<br>Solving Problems.</h1>
-  <p class="intro">
-    I am an Artificial Intelligence and Machine Learning engineering
-    student interested in Python development, AI/ML, automation and
-    cloud computing. I enjoy turning what I learn into practical projects.
-  </p>
-  <div class="actions">
-    <a class="btn primary" href="#projects">Explore My Projects</a>
-    <a class="btn" href="https://github.com/YOUR-USERNAME"
-       target="_blank" rel="noopener noreferrer">GitHub Profile ↗</a>
+<header id="home">
+<div class="wrap hero reveal">
+  <div>
+    <div class="eyebrow">AIML ENGINEERING STUDENT · PYTHON DEVELOPER</div>
+    <h1>Building useful things with <span class="gradient">code & AI.</span></h1>
+    <p class="intro">I'm Sathvik Raj T G, a B.E. Artificial Intelligence and Machine Learning student at Vivekananda College of Engineering and Technology, Puttur. I build Python projects and explore AI-powered applications, automation, and developer tools.</p>
+    <div class="actions">
+      <a class="btn primary" href="#projects">Explore Projects ↓</a>
+      <a class="btn" href="Sathvik_Raj_TG_Resume.pdf" download>Download Resume ↓</a>
+      <a class="btn" href="https://github.com/sathvik-raj24" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    </div>
+    <div style="margin-top:22px">
+      <span class="pill">Python</span><span class="pill">AI / ML</span><span class="pill">Git & GitHub</span><span class="pill">Cloud Computing</span>
+    </div>
   </div>
+  <aside class="profile">
+    <!-- Upload your photo as profile.jpg in the same repository folder -->
+    <img class="avatar" src="profile.jpg" alt="Sathvik Raj T G profile photo">
+    <h2>Sathvik Raj T G</h2>
+    <p>AI & Machine Learning Engineering Student</p>
+    <hr style="border:0;border-top:1px solid var(--line);margin:20px 0">
+    <p><strong>College</strong><br>VCET Puttur · VTU</p>
+    <p><strong>Academic stage</strong><br>3rd Year · 5th Semester</p>
+    <p><strong>Focus</strong><br>Python · AI applications · Developer tools</p>
+  </aside>
+</div>
 </header>
 
-<section id="about">
-  <h2>About Me</h2>
-  <p class="section-intro">
-    I am pursuing a B.E. in Artificial Intelligence and Machine Learning
-    at Vivekananda College of Engineering and Technology, Puttur, under VTU.
-    I am developing my skills through hands-on coding, project work and
-    continuous learning. My current priorities include programming,
-    data structures and algorithms, AI/ML and cloud computing.
-  </p>
-</section>
+<section id="about"><div class="wrap reveal">
+  <div class="kicker">About me</div><h2 class="title">Curious by nature. Practical by building.</h2>
+  <p>I'm pursuing a Bachelor of Engineering in Artificial Intelligence and Machine Learning at Vivekananda College of Engineering and Technology, Puttur, under VTU. My projects range from Python programming and automation to an AI Resume Analyzer and a tool for exploring Git repository history. I use hands-on projects to keep learning and improve my software development skills.</p>
+  <div class="card"><span class="tag">Education</span><h3>B.E. — Artificial Intelligence and Machine Learning</h3><p>Vivekananda College of Engineering and Technology, Puttur<br>3rd Year · 5th Semester</p></div>
+</div></section>
 
-<section id="skills">
-  <h2>Technical Skills</h2>
-  <p>Technologies and subjects I am learning and working with.</p>
+<section id="skills"><div class="wrap reveal">
+  <div class="kicker">Tools & technologies</div><h2 class="title">My technical toolkit</h2>
+  <p>Areas represented in my projects and learning journey.</p>
   <div class="skills">
-    <span>Python</span>
-    <span>Git</span>
-    <span>GitHub</span>
-    <span>HTML</span>
-    <span>CSS</span>
-    <span>Programming Fundamentals</span>
-    <span>AI & Machine Learning</span>
-    <span>Cloud Computing</span>
-    <span>DBMS</span>
-    <span>Problem Solving</span>
+    <span>Python</span><span>Git</span><span>GitHub</span><span>AI / ML</span><span>Streamlit</span><span>Python Automation</span><span>Git History Analysis</span><span>DBMS — Learning</span><span>Cloud Computing — Learning</span><span>Data Structures & Algorithms — Learning</span>
   </div>
-</section>
+</div></section>
 
-<section id="projects">
-  <h2>Featured Projects</h2>
-  <p>Selected work from my programming and engineering journey.</p>
+<section id="projects"><div class="wrap reveal">
+  <div class="kicker">Selected work</div><h2 class="title">Projects I've worked on</h2>
+  <p>Explore the source code and live demo where available.</p>
   <div class="grid">
     <article class="card">
-      <span class="tag">Python</span>
-      <h3>Hangman Game</h3>
-      <p>A word-guessing game that demonstrates Python programming
-      and game logic.</p>
-      <a href="https://github.com/YOUR-USERNAME/CodeAlpha_Hangman"
-         target="_blank" rel="noopener noreferrer">View Source Code ↗</a>
+      <span class="tag">AI / NLP · Streamlit</span><h3>AI Resume Analyzer</h3>
+      <p>An AI-powered resume analysis project. Visit the repository and demo to see its implemented functionality.</p>
+      <div class="links"><a href="https://github.com/sathvik-raj24/AI-Resume-Analyzer" target="_blank" rel="noopener noreferrer">Source code ↗</a><a href="https://airesume-intelligence.streamlit.app" target="_blank" rel="noopener noreferrer">Live demo ↗</a></div>
     </article>
-
     <article class="card">
-      <span class="tag">Python</span>
-      <h3>Stock Portfolio Tracker</h3>
-      <p>A Python project for recording portfolio information and
-      performing the calculations supported by the implementation.</p>
-      <a href="https://github.com/YOUR-USERNAME/CodeAlpha_StockPortfolio"
-         target="_blank" rel="noopener noreferrer">View Source Code ↗</a>
+      <span class="tag">Python · Developer Tool</span><h3>Codebase Archaeologist</h3>
+      <p>A Python project focused on examining Git history and exploring how a codebase changes over time.</p>
+      <div class="links"><a href="https://github.com/sathvik-raj24/codebase-archaeologist" target="_blank" rel="noopener noreferrer">Source code ↗</a></div>
     </article>
-
     <article class="card">
-      <span class="tag">Python · Automation</span>
-      <h3>File Organizer</h3>
-      <p>A utility project designed to organize files into folders
-      based on the rules implemented in the program.</p>
-      <a href="https://github.com/YOUR-USERNAME/CodeAlpha_FileOrganizer"
-         target="_blank" rel="noopener noreferrer">View Source Code ↗</a>
+      <span class="tag">Python · Game</span><h3>CodeAlpha Hangman</h3>
+      <p>A word-guessing game project demonstrating Python logic and user input handling.</p>
+      <div class="links"><a href="https://github.com/sathvik-raj24/CodeAlpha_Hangman" target="_blank" rel="noopener noreferrer">Source code ↗</a></div>
     </article>
-
     <article class="card">
-      <span class="tag">AI/ML · IoT</span>
-      <h3>EcoSort — Smart Bin</h3>
-      <p>An engineering project concept for automated waste segregation
-      using AI, a camera, sensors and embedded hardware.</p>
-      <p>Describe the components you actually built and tested.</p>
-      <a href="https://github.com/YOUR-USERNAME"
-         target="_blank" rel="noopener noreferrer">Find My Project ↗</a>
+      <span class="tag">Python · Calculations</span><h3>Stock Portfolio Tracker</h3>
+      <p>A Python project for entering stock information and calculating portfolio values.</p>
+      <div class="links"><a href="https://github.com/sathvik-raj24/CodeAlpha_StockPortfolio" target="_blank" rel="noopener noreferrer">Source code ↗</a></div>
+    </article>
+    <article class="card">
+      <span class="tag">Python · Automation</span><h3>File Organizer</h3>
+      <p>A utility project focused on organizing files by type using Python.</p>
+      <div class="links"><a href="https://github.com/sathvik-raj24/CodeAlpha_FileOrganizer" target="_blank" rel="noopener noreferrer">Source code ↗</a></div>
     </article>
   </div>
-</section>
+</div></section>
 
-<section id="experience">
-  <h2>Internship & Learning</h2>
+<section id="experience"><div class="wrap reveal">
+  <div class="kicker">Practical experience</div><h2 class="title">Python project work</h2>
   <div class="card">
-    <span class="tag">Python Development</span>
-    <h3>CodeAlpha Internship Projects</h3>
-    <p>
-      Worked on project-based Python tasks involving a Hangman game,
-      stock portfolio tracker and file organizer. Explore the linked
-      repositories to review the code and implementation.
-    </p>
-    <p>
-      Add your internship dates and completion status only as supported
-      by your actual internship records.
-    </p>
+    <span class="tag">CodeAlpha</span><h3>Python Programming Internship</h3>
+    <p>Project repositories associated with CodeAlpha include Hangman Game, Stock Portfolio Tracker, and File Organizer. Internship dates and formal completion status have not been supplied, so they are not claimed here.</p>
+    <div class="links">
+      <a href="https://github.com/sathvik-raj24/CodeAlpha_Hangman" target="_blank" rel="noopener noreferrer">Hangman ↗</a>
+      <a href="https://github.com/sathvik-raj24/CodeAlpha_StockPortfolio" target="_blank" rel="noopener noreferrer">Stock Tracker ↗</a>
+      <a href="https://github.com/sathvik-raj24/CodeAlpha_FileOrganizer" target="_blank" rel="noopener noreferrer">File Organizer ↗</a>
+    </div>
   </div>
-</section>
+</div></section>
 
-<section id="contact">
-  <h2>Contact Me</h2>
-  <p>Connect with me to discuss projects, internships and learning opportunities.</p>
-  <div class="actions">
-    <a class="btn" href="https://github.com/YOUR-USERNAME"
-       target="_blank" rel="noopener noreferrer">GitHub</a>
-    <a class="btn" href="https://www.linkedin.com/in/YOUR-LINKEDIN/"
-       target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    <a class="btn" href="mailto:YOUR-EMAIL">Email Me</a>
+<section id="certificates"><div class="wrap reveal">
+  <div class="kicker">Credentials</div><h2 class="title">Certificates & learning</h2>
+  <div class="card"><h3>Certificates will be added here</h3><p>I will list verified certificates and badges once their names and credential links are available.</p></div>
+</div></section>
+
+<section id="contact"><div class="wrap reveal">
+  <div class="kicker">Get in touch</div><h2 class="title">Let's connect.</h2>
+  <p>For internship opportunities, project discussions, or professional connections.</p>
+  <div class="contact-grid">
+    <div class="card">
+      <h3>Contact details</h3>
+      <a class="contact-item" href="mailto:satvikkakkapady@gmail.com">Email: satvikkakkapady@gmail.com ↗</a>
+      <a class="contact-item" href="tel:+918147007391">Phone: +91 8147007391 ↗</a>
+      <a class="contact-item" href="https://github.com/sathvik-raj24" target="_blank" rel="noopener noreferrer">GitHub profile ↗</a>
+      <a class="contact-item" href="https://www.linkedin.com/in/sathvik-raj-t-g-23451132a" target="_blank" rel="noopener noreferrer">LinkedIn profile ↗</a>
+    </div>
+    <div class="card">
+      <h3>Send a message</h3>
+      <p>This form opens your email application with the message filled in. It does not store messages online.</p>
+      <form id="contact-form">
+        <label for="visitor-name">Your name</label><input id="visitor-name" required placeholder="Your name">
+        <label for="visitor-email">Your email</label><input id="visitor-email" type="email" required placeholder="you@example.com">
+        <label for="visitor-message">Message</label><textarea id="visitor-message" required placeholder="Write your message"></textarea>
+        <button class="btn primary" type="submit">Prepare email ↗</button>
+      </form>
+    </div>
   </div>
-</section>
+</div></section>
 
-<footer>
-  © 2026 Sathvik Raj T G · Personal Developer Portfolio
-</footer>
+<footer><div class="wrap">© <span id="year"></span> Sathvik Raj T G · Built with HTML, CSS & JavaScript</div></footer>
 
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const name = document.getElementById("visitor-name").value.trim();
+  const email = document.getElementById("visitor-email").value.trim();
+  const message = document.getElementById("visitor-message").value.trim();
+  const subject = encodeURIComponent("Portfolio enquiry from " + name);
+  const body = encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message);
+  window.location.href = "mailto:satvikkakkapady@gmail.com?subject=" + subject + "&body=" + body;
+});
+</script>
 </body>
 </html>
