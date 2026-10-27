@@ -1,361 +1,180 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#090b12">
-  <meta name="description" content="Sathvik Raj T G — AI and Machine Learning engineering student building Python, AI, and developer tools.">
-  <title>Sathvik Raj T G | Developer Portfolio</title>
-  <style>
-    :root {
-      --bg: #090b12; --surface: #111522; --surface-2: #151b2b;
-      --text: #f4f6ff; --muted: #a5aec4; --line: rgba(166,180,230,.16);
-      --blue: #91a8ff; --violet: #c3a0ff; --green: #8ce6c0;
-      --max: 1120px; --radius: 20px;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
-    body {
-      margin: 0; background:
-        radial-gradient(ellipse at 12% 0%, rgba(87,100,220,.18), transparent 38rem),
-        radial-gradient(ellipse at 92% 20%, rgba(151,82,221,.12), transparent 32rem),
-        var(--bg);
-      color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.65; overflow-x: hidden;
-    }
-    a { color: inherit; text-decoration: none; }
-    button, input, textarea { font: inherit; }
-    .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
-    .nav-wrap { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(18px); background: rgba(9,11,18,.78); border-bottom: 1px solid var(--line); }
-    nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
-    .brand { display: inline-flex; align-items: center; gap: 11px; font-weight: 800; letter-spacing: -.03em; white-space: nowrap; }
-    .brand-mark { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 12px; color: #090b12; background: linear-gradient(135deg,var(--blue),var(--violet)); font-size: 14px; }
-    .nav-links { display: flex; align-items: center; gap: 24px; color: var(--muted); font-size: 13px; }
-    .nav-links a:hover, .text-link:hover { color: white; }
-    .nav-cta, .button { display: inline-flex; justify-content: center; align-items: center; gap: 9px; border: 1px solid var(--line); border-radius: 12px; padding: 11px 16px; font-weight: 700; font-size: 13px; transition: transform .2s, border-color .2s, background .2s; cursor: pointer; }
-    .button:hover, .nav-cta:hover { transform: translateY(-2px); border-color: rgba(145,168,255,.7); }
-    .button.primary { color: #090b12; border: 0; background: linear-gradient(120deg,var(--blue),var(--violet)); }
-    .button.ghost { background: rgba(255,255,255,.025); }
-    .hero { padding: 94px 0 80px; position: relative; }
-    .hero-grid { display: grid; grid-template-columns: minmax(0,1.35fr) minmax(260px,.65fr); gap: 54px; align-items: center; }
-    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--blue); font-size: 11px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
-    .pulse { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 15px rgba(140,230,192,.8); }
-    h1 { font-size: clamp(42px, 6.4vw, 76px); letter-spacing: -.065em; line-height: 1.02; margin: 22px 0; max-width: 780px; }
-    .gradient-text { background: linear-gradient(100deg,#a7baff 5%,#d0a7ff 65%,#8ce6c0 110%); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .hero-copy { max-width: 660px; color: var(--muted); font-size: 17px; }
-    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
-    .quick-facts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
-    .pill { border: 1px solid var(--line); border-radius: 999px; padding: 7px 11px; color: #c9d0e3; background: rgba(255,255,255,.025); font-size: 11px; }
-    .profile-panel { border: 1px solid var(--line); border-radius: 26px; padding: 24px; background: linear-gradient(145deg,rgba(26,33,53,.94),rgba(14,17,28,.9)); box-shadow: 0 25px 90px rgba(0,0,0,.22); transform: rotate(1deg); }
-    .panel-top { display: flex; align-items: center; justify-content: space-between; color: var(--muted); font-size: 11px; }
-    .window-dots { display: flex; gap: 5px; }
-    .window-dots i { display: block; width: 7px; height: 7px; border-radius: 50%; background: #7785a8; }
-    .avatar { width: 78px; height: 78px; display: grid; place-items: center; margin: 28px 0 18px; border-radius: 23px; background: linear-gradient(135deg,#91a8ff,#c3a0ff); color: #0a0c12; font-size: 28px; font-weight: 900; letter-spacing: -.07em; }
-    
-    .photo-avatar { width: 112px; height: 112px; overflow: hidden; border-radius: 24px; padding: 0; }
-    .photo-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    
-    .profile-panel h2 { margin: 0; font-size: 22px; letter-spacing: -.04em; }
-    .profile-panel .role { color: var(--muted); font-size: 13px; margin: 3px 0 20px; }
-    .profile-line { height: 1px; background: var(--line); margin: 18px 0; }
-    .mini-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 12px; }
-    .mini-row span:first-child { color: var(--muted); }
-    .mini-row span:last-child { color: #e4e9ff; text-align: right; }
-    section { padding: 76px 0; border-top: 1px solid var(--line); }
-    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 28px; }
-    .section-kicker { color: var(--violet); font-size: 11px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
-    h2.section-title { margin: 8px 0 0; font-size: clamp(29px,4vw,43px); line-height: 1.15; letter-spacing: -.05em; }
-    .section-desc { color: var(--muted); max-width: 540px; margin: 12px 0 0; font-size: 14px; }
-    .about-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 20px; }
-    .surface { background: rgba(17,21,34,.82); border: 1px solid var(--line); border-radius: var(--radius); padding: 25px; }
-    .surface p { color: var(--muted); margin: 0 0 13px; font-size: 14px; }
-    .surface p:last-child { margin-bottom: 0; }
-    .education-card { display: flex; flex-direction: column; gap: 8px; }
-    .education-card .date { color: var(--green); font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
-    .education-card h3 { margin: 0; font-size: 17px; line-height: 1.4; }
-    .education-card .sub { color: var(--muted); font-size: 13px; }
-    .skill-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 13px; }
-    .skill-card { padding: 19px; border: 1px solid var(--line); border-radius: 16px; background: rgba(17,21,34,.7); }
-    .skill-icon { width: 36px; height: 36px; border-radius: 11px; display: grid; place-items: center; color: var(--blue); background: rgba(145,168,255,.1); margin-bottom: 13px; font-weight: 800; }
-    .skill-card h3 { margin: 0 0 5px; font-size: 14px; }
-    .skill-card p { margin: 0; color: var(--muted); font-size: 12px; }
-    .project-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 17px; }
-    .project-card { display: flex; flex-direction: column; min-height: 245px; padding: 24px; border: 1px solid var(--line); border-radius: 19px; background: linear-gradient(145deg,rgba(20,26,42,.94),rgba(13,16,26,.9)); transition: transform .25s,border-color .25s; }
-    .project-card:hover { transform: translateY(-5px); border-color: rgba(145,168,255,.5); }
-    .project-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 18px; }
-    .project-symbol { width: 43px; height: 43px; display: grid; place-items: center; border-radius: 13px; font-weight: 900; font-size: 14px; color: var(--blue); background: rgba(145,168,255,.1); border: 1px solid rgba(145,168,255,.15); }
-    .project-type { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
-    .project-card h3 { margin: 0 0 8px; font-size: 20px; letter-spacing: -.03em; }
-    .project-card p { color: var(--muted); font-size: 13px; margin: 0 0 17px; }
-    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin: 0 0 20px; }
-    .tags span { font-size: 10px; color: #cbd3ed; padding: 4px 8px; background: rgba(255,255,255,.04); border: 1px solid var(--line); border-radius: 6px; }
-    .project-links { display: flex; flex-wrap: wrap; gap: 16px; margin-top: auto; font-size: 12px; font-weight: 750; }
-    .text-link { color: var(--blue); }
-    .experience { display: grid; grid-template-columns: 30px 1fr; gap: 17px; }
-    .timeline { position: relative; display: flex; justify-content: center; }
-    .timeline:before { content: ""; position: absolute; top: 8px; bottom: 0; width: 1px; background: var(--line); }
-    .timeline:after { content: ""; position: absolute; top: 7px; width: 10px; height: 10px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 20px rgba(145,168,255,.65); }
-    .experience h3 { margin: 0; font-size: 18px; }
-    .experience .meta { color: var(--green); font-size: 12px; margin: 4px 0 12px; }
-    .experience p, .experience li { color: var(--muted); font-size: 13px; }
-    .experience ul { padding-left: 18px; margin: 10px 0 0; }
-    .cert-box { display: flex; align-items: flex-start; gap: 15px; }
-    .cert-icon { flex: 0 0 42px; height: 42px; display: grid; place-items: center; border-radius: 13px; color: var(--violet); background: rgba(195,160,255,.1); font-weight: 900; }
-    .cert-box h3 { margin: 0 0 6px; font-size: 16px; }
-    .cert-box p { color: var(--muted); margin: 0; font-size: 13px; }
-    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 22px; }
-    .contact-links { display: grid; gap: 10px; margin-top: 20px; }
-    .contact-link { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 13px 15px; border: 1px solid var(--line); border-radius: 12px; color: #e1e7fa; font-size: 13px; }
-    .contact-link span:last-child { color: var(--blue); }
-    form { display: grid; gap: 13px; }
-    label { display: block; color: #d7dcef; font-size: 12px; margin-bottom: 6px; }
-    input, textarea { width: 100%; border: 1px solid var(--line); background: #0b0e17; color: var(--text); padding: 12px 13px; border-radius: 10px; outline: none; }
-    input:focus, textarea:focus { border-color: rgba(145,168,255,.7); }
-    textarea { min-height: 115px; resize: vertical; }
-    .form-note { color: var(--muted); font-size: 11px; margin: 0; }
-    footer { padding: 26px 0 35px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
-    .footer-row { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; } .reveal { opacity: 1; transform: none; } }
-    @media (max-width: 850px) {
-      .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; }
-      .profile-panel { max-width: 440px; transform: none; }
-      .skill-grid { grid-template-columns: repeat(2,1fr); }
-      .hero { padding-top: 70px; }
-    }
-    @media (max-width: 620px) {
-      .wrap { width: min(100% - 28px, var(--max)); }
-      nav { min-height: 68px; align-items: flex-start; flex-direction: column; padding: 13px 0; gap: 12px; }
-      .nav-links { width: 100%; overflow-x: auto; gap: 17px; padding-bottom: 3px; }
-      .nav-cta { display: none; }
-      .hero { padding: 55px 0; }
-      .hero-copy { font-size: 15px; }
-      section { padding: 55px 0; }
-      .section-head { display: block; }
-      .project-grid { grid-template-columns: 1fr; }
-      .skill-grid { gap: 9px; }
-      .skill-card { padding: 14px; }
-      .skill-card p { font-size: 11px; }
-      .surface, .project-card { padding: 20px; }
-    }
-  </style>
-</head>
-<body>
-  <div class="nav-wrap">
-    <nav class="wrap" aria-label="Main navigation">
-      <a class="brand" href="#home" aria-label="Sathvik Raj home"><span class="brand-mark">SR</span><span>Sathvik Raj T G</span></a>
-      <div class="nav-links">
-        <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a>
-        <a href="#experience">Experience</a><a href="#certificates">Certificates</a><a href="#contact">Contact</a>
-      </div>
-      <a class="nav-cta" href="#contact">Let's connect ↗</a>
-    </nav>
+
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">MY WORK</span>
+      <h2>Featured <span class="accent">Projects</span></h2>
+      <p>Explore my projects in artificial intelligence, Python development, automation, and software engineering.</p>
+    </div>
+
+    <div class="project-grid">
+
+      <!-- Campus Handbook Assistant -->
+      <article class="card project-card reveal">
+        <div class="project-top">
+          <div class="project-icon"><i class="fa-solid fa-book-open"></i></div>
+          <div class="project-links">
+            <a href="https://github.com/sathvik-raj24/campus-handbook-assistant"
+               target="_blank" rel="noopener" aria-label="View source code">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <h3>Campus Handbook Assistant — RAG</h3>
+        <p>A local Retrieval-Augmented Generation application that retrieves relevant handbook information to answer questions using a knowledge base, with optional Ollama-powered embeddings and language-model generation.</p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">RAG</span>
+          <span class="tag">Ollama</span>
+          <span class="tag">AI</span>
+        </div>
+        <div style="margin-top:22px">
+          <a class="btn btn-primary" href="https://github.com/sathvik-raj24/campus-handbook-assistant" target="_blank" rel="noopener">
+            View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- AI Resume Analyzer -->
+      <article class="card project-card reveal">
+        <div class="project-top">
+          <div class="project-icon"><i class="fa-solid fa-file-circle-check"></i></div>
+          <div class="project-links">
+            <a href="https://github.com/sathvik-raj24/AI-Resume-Analyzer"
+               target="_blank" rel="noopener" aria-label="View source code">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://airesume-intelligence.streamlit.app"
+               target="_blank" rel="noopener" aria-label="Open live demo">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+        <h3>AI Resume Analyzer</h3>
+        <p>An AI-focused resume analysis project designed to help users review resume content and explore alignment with career opportunities.</p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">AI</span>
+          <span class="tag">Resume Analysis</span>
+          <span class="tag">Streamlit</span>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://airesume-intelligence.streamlit.app" target="_blank" rel="noopener">
+            Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+          <a class="btn btn-secondary" href="https://github.com/sathvik-raj24/AI-Resume-Analyzer" target="_blank" rel="noopener">
+            Source Code
+          </a>
+        </div>
+      </article>
+
+      <!-- Codebase Archaeologist -->
+      <article class="card project-card reveal">
+        <div class="project-top">
+          <div class="project-icon"><i class="fa-solid fa-code-branch"></i></div>
+          <div class="project-links">
+            <a href="https://github.com/sathvik-raj24/codebase-archaeologist"
+               target="_blank" rel="noopener" aria-label="View source code">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <h3>Codebase Archaeologist</h3>
+        <p>A software development project focused on exploring and understanding codebases. Visit the repository for its implementation, documentation, and features.</p>
+        <div class="tags">
+          <span class="tag">Software Engineering</span>
+          <span class="tag">Code Analysis</span>
+          <span class="tag">Development</span>
+        </div>
+        <div style="margin-top:22px">
+          <a class="btn btn-primary" href="https://github.com/sathvik-raj24/codebase-archaeologist" target="_blank" rel="noopener">
+            View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- CodeAlpha Hangman -->
+      <article class="card project-card reveal">
+        <div class="project-top">
+          <div class="project-icon"><i class="fa-solid fa-gamepad"></i></div>
+          <div class="project-links">
+            <a href="https://github.com/sathvik-raj24/CodeAlpha_Hangman"
+               target="_blank" rel="noopener" aria-label="View source code">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <h3>Hangman Game</h3>
+        <p>A Python word-guessing game completed as part of CodeAlpha programming internship tasks, demonstrating programming fundamentals and game logic.</p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Game Logic</span>
+          <span class="tag">CodeAlpha</span>
+        </div>
+        <div style="margin-top:22px">
+          <a class="btn btn-primary" href="https://github.com/sathvik-raj24/CodeAlpha_Hangman" target="_blank" rel="noopener">
+            View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- Stock Portfolio Tracker -->
+      <article class="card project-card reveal">
+        <div class="project-top">
+          <div class="project-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <div class="project-links">
+            <a href="https://github.com/sathvik-raj24/CodeAlpha_StockPortfolio"
+               target="_blank" rel="noopener" aria-label="View source code">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <h3>Stock Portfolio Tracker</h3>
+        <p>A Python project for working with stock portfolio information and investment-related calculations, developed as part of CodeAlpha programming tasks.</p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Data Handling</span>
+          <span class="tag">CodeAlpha</span>
+        </div>
+        <div style="margin-top:22px">
+          <a class="btn btn-primary" href="https://github.com/sathvik-raj24/CodeAlpha_StockPortfolio" target="_blank" rel="noopener">
+            View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- File Organizer -->
+      <article class="card project-card reveal">
+        <div class="project-top">
+          <div class="project-icon"><i class="fa-solid fa-folder-tree"></i></div>
+          <div class="project-links">
+            <a href="https://github.com/sathvik-raj24/CodeAlpha_FileOrganizer"
+               target="_blank" rel="noopener" aria-label="View source code">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <h3>File Organizer</h3>
+        <p>A Python automation project designed to help organise files and simplify folder management, developed as part of CodeAlpha programming tasks.</p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Automation</span>
+          <span class="tag">CodeAlpha</span>
+        </div>
+        <div style="margin-top:22px">
+          <a class="btn btn-primary" href="https://github.com/sathvik-raj24/CodeAlpha_FileOrganizer" target="_blank" rel="noopener">
+            View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <div style="margin-top:30px">
+      <a class="btn btn-secondary" href="https://github.com/sathvik-raj24" target="_blank" rel="noopener">
+        Explore All My GitHub Projects
+        <i class="fa-brands fa-github"></i>
+      </a>
+    </div>
   </div>
-
-  <main>
-    <header class="hero wrap" id="home">
-      <div class="hero-grid">
-        <div class="reveal">
-          <div class="eyebrow"><span class="pulse"></span> AIML Engineering Student · Python Developer</div>
-          <h1>Building useful things with <span class="gradient-text">code & AI.</span></h1>
-          <p class="hero-copy">I'm Sathvik Raj T G, a B.E. Artificial Intelligence and Machine Learning student at VCET Puttur. I build Python projects and explore AI-powered tools, developer productivity, and practical software solutions.</p>
-          <div class="hero-actions">
-            <a class="button primary" href="#projects">Explore my work <span aria-hidden="true">↘</span></a>
-            <a class="button ghost" href="Sathvik_Raj_TG_Resume.pdf" download>Download resume ↓</a>
-            <a class="button ghost" href="https://github.com/sathvik-raj24" target="_blank" rel="noopener noreferrer">GitHub profile ↗</a>
-          </div>
-          <div class="quick-facts">
-            <span class="pill">Python</span><span class="pill">AI / ML</span><span class="pill">Git & GitHub</span><span class="pill">Cloud Computing</span>
-          </div>
-        </div>
-        <aside class="profile-panel reveal" aria-label="Profile summary">
-          <div class="panel-top"><span>PROFILE / 001</span><span class="window-dots"><i></i><i></i><i></i></span></div>
-          <div class="avatar photo-avatar"><img src="profile.jpg" alt="Portrait of Sathvik Raj T G"></div>
-          <h2>Sathvik Raj T G</h2>
-          <p class="role">AI & Machine Learning · B.E.</p>
-          <div class="profile-line"></div>
-          <div class="mini-row"><span>Education</span><span>VCET Puttur · VTU</span></div>
-          <div class="profile-line"></div>
-          <div class="mini-row"><span>Current stage</span><span>3rd year · 5th semester</span></div>
-          <div class="profile-line"></div>
-          <div class="mini-row"><span>Focus</span><span>Python · AI tools</span></div>
-        </aside>
-      </div>
-    </header>
-
-    <section id="about">
-      <div class="wrap reveal">
-        <div class="section-head"><div><div class="section-kicker">A little about me</div><h2 class="section-title">Curious by nature.<br>Practical by building.</h2></div></div>
-        <div class="about-grid">
-          <div class="surface">
-            <p>I'm pursuing a Bachelor of Engineering in Artificial Intelligence and Machine Learning at Vivekananda College of Engineering and Technology, Puttur.</p>
-            <p>My projects range from Python fundamentals and automation to an AI Resume Analyzer and a tool for exploring Git repository history. I use hands-on projects to keep learning, improve problem-solving, and build a stronger engineering foundation.</p>
-            <p>I'm interested in opportunities where I can learn from real-world development, collaborate with others, and turn ideas into useful software.</p>
-          </div>
-          <div class="surface education-card">
-            <div class="date">Education</div>
-            <h3>B.E. — Artificial Intelligence and Machine Learning</h3>
-            <div class="sub">Vivekananda College of Engineering and Technology, Puttur</div>
-            <div class="profile-line"></div>
-            <div class="date">Current academic stage</div>
-            <h3>3rd Year · 5th Semester</h3>
-            <div class="sub">Visvesvaraya Technological University (VTU)</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills">
-      <div class="wrap reveal">
-        <div class="section-head"><div><div class="section-kicker">Tools & technologies</div><h2 class="section-title">My technical toolkit</h2><p class="section-desc">Based on the projects and learning areas shared. This list is not a claim of expert-level proficiency.</p></div></div>
-        <div class="skill-grid">
-          <div class="skill-card"><div class="skill-icon">Py</div><h3>Python</h3><p>Scripts, program logic, and project development</p></div>
-          <div class="skill-card"><div class="skill-icon">AI</div><h3>AI / ML</h3><p>AI-powered applications and resume analysis</p></div>
-          <div class="skill-card"><div class="skill-icon">Git</div><h3>Git & GitHub</h3><p>Repositories, version history, and source control</p></div>
-          <div class="skill-card"><div class="skill-icon">Web</div><h3>Streamlit</h3><p>Interactive Python web application deployment</p></div>
-          <div class="skill-card"><div class="skill-icon">NLP</div><h3>NLP concepts</h3><p>Resume text and job-description analysis project</p></div>
-          <div class="skill-card"><div class="skill-icon">OS</div><h3>Python automation</h3><p>File organization and filesystem operations</p></div>
-          <div class="skill-card"><div class="skill-icon">DSA</div><h3>Problem solving</h3><p>Building programming fundamentals through practice</p></div>
-          <div class="skill-card"><div class="skill-icon">☁</div><h3>Cloud computing</h3><p>Ongoing learning and career development focus</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="wrap reveal">
-        <div class="section-head"><div><div class="section-kicker">Selected work</div><h2 class="section-title">Projects I've worked on</h2><p class="section-desc">Open the source repositories to explore the code and project documentation. The live demo link is provided for the resume analyzer.</p></div></div>
-        <div class="project-grid">
-          <article class="project-card">
-            <div class="project-top"><div class="project-symbol">AI</div><span class="project-type">AI / NLP · Streamlit</span></div>
-            <h3>AI Resume Analyzer</h3>
-            <p>An AI-powered resume intelligence project with resume parsing, ATS-oriented analysis, skill matching, keyword-gap identification, job matching, recommendations, and cover-letter generation described in its repository.</p>
-            <div class="tags"><span>Python</span><span>AI / ML</span><span>NLP</span><span>Streamlit</span></div>
-            <div class="project-links"><a class="text-link" href="https://github.com/sathvik-raj24/AI-Resume-Analyzer" target="_blank" rel="noopener noreferrer">Source code ↗</a><a class="text-link" href="https://airesume-intelligence.streamlit.app" target="_blank" rel="noopener noreferrer">Live demo ↗</a></div>
-          </article>
-          <article class="project-card">
-            <div class="project-top"><div class="project-symbol">GH</div><span class="project-type">Python · Developer tooling</span></div>
-            <h3>Codebase Archaeologist</h3>
-            <p>A Python tool that analyzes Git history to identify frequently changed files and understand how a codebase evolves over time.</p>
-            <div class="tags"><span>Python</span><span>Git history</span><span>Developer tools</span></div>
-            <div class="project-links"><a class="text-link" href="https://github.com/sathvik-raj24/codebase-archaeologist" target="_blank" rel="noopener noreferrer">Source code ↗</a></div>
-          </article>
-          <article class="project-card">
-            <div class="project-top"><div class="project-symbol">H</div><span class="project-type">Python · Game logic</span></div>
-            <h3>CodeAlpha Hangman</h3>
-            <p>A console-based word guessing game with random word selection, letter guesses, a limited number of incorrect attempts, and input handling.</p>
-            <div class="tags"><span>Python</span><span>Loops</span><span>Lists & strings</span></div>
-            <div class="project-links"><a class="text-link" href="https://github.com/sathvik-raj24/CodeAlpha_Hangman" target="_blank" rel="noopener noreferrer">Source code ↗</a></div>
-          </article>
-          <article class="project-card">
-            <div class="project-top"><div class="project-symbol">$</div><span class="project-type">Python · Calculations</span></div>
-            <h3>Stock Portfolio Tracker</h3>
-            <p>A Python program that uses predefined stock prices, accepts stock and quantity inputs, calculates investment values, validates entries, and presents a portfolio summary.</p>
-            <div class="tags"><span>Python</span><span>Dictionaries</span><span>Input validation</span></div>
-            <div class="project-links"><a class="text-link" href="https://github.com/sathvik-raj24/CodeAlpha_StockPortfolio" target="_blank" rel="noopener noreferrer">Source code ↗</a></div>
-          </article>
-          <article class="project-card">
-            <div class="project-top"><div class="project-symbol">FO</div><span class="project-type">Python · Automation</span></div>
-            <h3>File Organizer</h3>
-            <p>A file organization script that sorts files into folders based on their extensions, creates category folders, and handles common file types.</p>
-            <div class="tags"><span>Python</span><span>OS</span><span>Shutil</span><span>Automation</span></div>
-            <div class="project-links"><a class="text-link" href="https://github.com/sathvik-raj24/CodeAlpha_FileOrganizer" target="_blank" rel="noopener noreferrer">Source code ↗</a></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience">
-      <div class="wrap reveal">
-        <div class="section-head"><div><div class="section-kicker">Practical experience</div><h2 class="section-title">Internship projects</h2></div></div>
-        <div class="experience">
-          <div class="timeline" aria-hidden="true"></div>
-          <div class="surface">
-            <h3>CodeAlpha — Python Programming Internship</h3>
-            <div class="meta">Project-based Python work · Status/dates not provided</div>
-            <p>Project repositories shared for this internship include:</p>
-            <ul>
-              <li>Hangman Game — text-based gameplay and input handling.</li>
-              <li>Stock Portfolio Tracker — predefined stock-price calculations and validation.</li>
-              <li>File Organizer — sorting files by type using Python filesystem modules.</li>
-            </ul>
-            <p style="margin-top:12px">Only the projects and organization details supplied are listed here; no internship dates or completion credential are assumed.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="certificates">
-      <div class="wrap reveal">
-        <div class="section-head"><div><div class="section-kicker">Learning & credentials</div><h2 class="section-title">Certificates</h2><p class="section-desc">A dedicated section for verified certificates and badges.</p></div></div>
-        <div class="surface cert-box">
-          <div class="cert-icon">✓</div>
-          <div><h3>Credentials will be added here</h3><p>No certificate links were supplied yet. Add only credentials you've earned, with the exact course name and certificate or badge URL.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="wrap reveal">
-        <div class="section-head"><div><div class="section-kicker">Get in touch</div><h2 class="section-title">Let's connect.</h2><p class="section-desc">For internships, project discussions, and learning opportunities, you can reach me through the links below.</p></div></div>
-        <div class="contact-grid">
-          <div class="surface">
-            <h3>Contact details</h3>
-            <p style="margin-top:8px">Choose a channel to connect with me professionally.</p>
-            <div class="contact-links">
-              <a class="contact-link" href="mailto:satvikkakkapady@gmail.com"><span>Email</span><span>Send email ↗</span></a>
-              <a class="contact-link" href="tel:+918147007391"><span>Phone</span><span>+91 8147007391 ↗</span></a>
-              <a class="contact-link" href="https://github.com/sathvik-raj24" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span>View profile ↗</span></a>
-              <a class="contact-link" href="https://www.linkedin.com/in/sathvik-raj-t-g-23451132a" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><span>Connect ↗</span></a>
-            </div>
-          </div>
-          <div class="surface">
-            <h3>Send a message</h3>
-            <p style="margin:5px 0 18px">This static GitHub Pages form opens your email app with the message filled in. It does not send or store submissions by itself.</p>
-            <form id="contact-form">
-              <div><label for="sender-name">Your name</label><input id="sender-name" name="name" autocomplete="name" required placeholder="Enter your name"></div>
-              <div><label for="sender-email">Your email</label><input id="sender-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com"></div>
-              <div><label for="sender-message">Message</label><textarea id="sender-message" name="message" required placeholder="Write your message..."></textarea></div>
-              <button class="button primary" type="submit">Prepare email ↗</button>
-              <p class="form-note">Your email app will open so you can review and send the message.</p>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap footer-row"><span>© <span id="year"></span> Sathvik Raj T G</span><span>Designed with care · Hosted with GitHub Pages</span><a class="text-link" href="#home">Back to top ↑</a></div>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    const revealItems = document.querySelectorAll(".reveal");
-    if ("IntersectionObserver" in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12 });
-      revealItems.forEach((item) => observer.observe(item));
-    } else {
-      revealItems.forEach((item) => item.classList.add("visible"));
-    }
-
-    document.getElementById("contact-form").addEventListener("submit", function (event) {
-      event.preventDefault();
-      const name = document.getElementById("sender-name").value.trim();
-      const email = document.getElementById("sender-email").value.trim();
-      const message = document.getElementById("sender-message").value.trim();
-      const subject = encodeURIComponent("Portfolio enquiry from " + name);
-      const body = encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message);
-      window.location.href = "mailto:satvikkakkapady@gmail.com?subject=" + subject + "&body=" + body;
-    });
-  </script>
-</body>
-</html>
+</section>
