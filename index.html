@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sathvik Raj T G - AIML engineering student and Python developer portfolio">
+<title>Sathvik Raj T G | Portfolio</title>
+<style>
+:root {
+  --bg: #0a0c12;
+  --panel: #121722;
+  --text: #f2f4fb;
+  --muted: #a7b0c2;
+  --accent: #91a8ff;
+  --border: #272f40;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: white; }
+nav {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 16px; padding: 20px 8%;
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; background: #0a0c12f5; z-index: 10;
+}
+nav strong { font-size: 18px; }
+nav div { display: flex; gap: 18px; flex-wrap: wrap; }
+nav a { font-size: 14px; }
+header { padding: 100px 8% 85px; }
+.eyebrow { color: var(--accent); letter-spacing: 2px; font-size: 12px; }
+h1 { font-size: clamp(38px, 7vw, 68px); line-height: 1.12; margin: 18px 0; }
+h2 { font-size: 30px; margin-bottom: 12px; }
+h3 { font-size: 19px; margin-bottom: 8px; }
+p { color: var(--muted); }
+.intro { max-width: 680px; font-size: 17px; }
+.actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 25px; }
+.btn {
+  display: inline-block; border: 1px solid var(--accent);
+  padding: 10px 17px; border-radius: 8px;
+}
+.btn.primary { background: var(--accent); color: #0a0c12; font-weight: bold; }
+section { padding: 65px 8%; border-top: 1px solid var(--border); }
+.section-intro { margin-bottom: 25px; }
+.grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px; margin-top: 25px;
+}
+.card {
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: 13px; padding: 23px;
+}
+.card p { margin: 10px 0 16px; }
+.tag {
+  display: inline-block; font-size: 12px; color: var(--accent);
+  background: #202943; border-radius: 5px; padding: 3px 8px;
+  margin-bottom: 12px;
+}
+.skills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.skills span {
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: 7px; padding: 8px 13px; color: #d9deeb;
+}
+footer {
+  padding: 30px 8%; border-top: 1px solid var(--border);
+  text-align: center; font-size: 13px;
+}
+@media(max-width:600px) {
+  nav { align-items: flex-start; flex-direction: column; padding: 16px 5%; }
+  nav div { gap: 12px; }
+  header { padding: 70px 6%; }
+  section { padding: 48px 6%; }
+  h2 { font-size: 26px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <strong>Sathvik Raj T G</strong>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header>
+  <p class="eyebrow">ENGINEERING STUDENT · PYTHON DEVELOPER</p>
+  <h1>Learning. Building.<br>Solving Problems.</h1>
+  <p class="intro">
+    I am an Artificial Intelligence and Machine Learning engineering
+    student interested in Python development, AI/ML, automation and
+    cloud computing. I enjoy turning what I learn into practical projects.
+  </p>
+  <div class="actions">
+    <a class="btn primary" href="#projects">Explore My Projects</a>
+    <a class="btn" href="https://github.com/YOUR-USERNAME"
+       target="_blank" rel="noopener noreferrer">GitHub Profile ↗</a>
+  </div>
+</header>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p class="section-intro">
+    I am pursuing a B.E. in Artificial Intelligence and Machine Learning
+    at Vivekananda College of Engineering and Technology, Puttur, under VTU.
+    I am developing my skills through hands-on coding, project work and
+    continuous learning. My current priorities include programming,
+    data structures and algorithms, AI/ML and cloud computing.
+  </p>
+</section>
+
+<section id="skills">
+  <h2>Technical Skills</h2>
+  <p>Technologies and subjects I am learning and working with.</p>
+  <div class="skills">
+    <span>Python</span>
+    <span>Git</span>
+    <span>GitHub</span>
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>Programming Fundamentals</span>
+    <span>AI & Machine Learning</span>
+    <span>Cloud Computing</span>
+    <span>DBMS</span>
+    <span>Problem Solving</span>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Featured Projects</h2>
+  <p>Selected work from my programming and engineering journey.</p>
+  <div class="grid">
+    <article class="card">
+      <span class="tag">Python</span>
+      <h3>Hangman Game</h3>
+      <p>A word-guessing game that demonstrates Python programming
+      and game logic.</p>
+      <a href="https://github.com/YOUR-USERNAME/CodeAlpha_Hangman"
+         target="_blank" rel="noopener noreferrer">View Source Code ↗</a>
+    </article>
+
+    <article class="card">
+      <span class="tag">Python</span>
+      <h3>Stock Portfolio Tracker</h3>
+      <p>A Python project for recording portfolio information and
+      performing the calculations supported by the implementation.</p>
+      <a href="https://github.com/YOUR-USERNAME/CodeAlpha_StockPortfolio"
+         target="_blank" rel="noopener noreferrer">View Source Code ↗</a>
+    </article>
+
+    <article class="card">
+      <span class="tag">Python · Automation</span>
+      <h3>File Organizer</h3>
+      <p>A utility project designed to organize files into folders
+      based on the rules implemented in the program.</p>
+      <a href="https://github.com/YOUR-USERNAME/CodeAlpha_FileOrganizer"
+         target="_blank" rel="noopener noreferrer">View Source Code ↗</a>
+    </article>
+
+    <article class="card">
+      <span class="tag">AI/ML · IoT</span>
+      <h3>EcoSort — Smart Bin</h3>
+      <p>An engineering project concept for automated waste segregation
+      using AI, a camera, sensors and embedded hardware.</p>
+      <p>Describe the components you actually built and tested.</p>
+      <a href="https://github.com/YOUR-USERNAME"
+         target="_blank" rel="noopener noreferrer">Find My Project ↗</a>
+    </article>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Internship & Learning</h2>
+  <div class="card">
+    <span class="tag">Python Development</span>
+    <h3>CodeAlpha Internship Projects</h3>
+    <p>
+      Worked on project-based Python tasks involving a Hangman game,
+      stock portfolio tracker and file organizer. Explore the linked
+      repositories to review the code and implementation.
+    </p>
+    <p>
+      Add your internship dates and completion status only as supported
+      by your actual internship records.
+    </p>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Me</h2>
+  <p>Connect with me to discuss projects, internships and learning opportunities.</p>
+  <div class="actions">
+    <a class="btn" href="https://github.com/YOUR-USERNAME"
+       target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/YOUR-LINKEDIN/"
+       target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a class="btn" href="mailto:YOUR-EMAIL">Email Me</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Sathvik Raj T G · Personal Developer Portfolio
+</footer>
+
+</body>
+</html>
